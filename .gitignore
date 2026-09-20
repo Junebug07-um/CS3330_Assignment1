@@ -1,0 +1,12 @@
+# Compiled bytecode and output directory
+bin/
+*.class
+
+# Eclipse workspace metadata and local settings
+.metadata/
+.settings/
+.recommenders/
+
+# Operating system cache files
+.DS_Store
+Thumbs.db
