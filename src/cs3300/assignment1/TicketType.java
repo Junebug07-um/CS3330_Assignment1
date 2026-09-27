@@ -1,3 +1,4 @@
+package cs3300.assignment1;
 
 public class TicketType {
 	private final String name;
@@ -8,8 +9,8 @@ public class TicketType {
 			throw new IllegalArgumentException("Ticket name cannot be blank or null");
 		}
 		
-		if(price <= 0.0) {// chekcs if price is positive
-			throw new IllegalArgumentException("Ticket price must be greater than zero");
+		if(price < 0) {// checks if price is positive
+			throw new IllegalArgumentException("Ticket price cannot be negative");
 		
 		}
 		this.name = name;//sets name and price

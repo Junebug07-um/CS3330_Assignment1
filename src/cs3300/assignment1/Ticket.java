@@ -1,14 +1,15 @@
+package cs3300.assignment1;
 
 public class Ticket {
-public int id;
-public Event event;
-public TicketType ticketType;
-public String studentName;
-public boolean canceled;
-public boolean admitted;// Ticket has id, event, type, studentname, cancelled, and admitted
+private int id;
+private Event event;
+private TicketType ticketType;
+private String studentName;
+private boolean canceled;
+private boolean admitted;// Ticket has id, event, type, studentname, cancelled, and admitted
 
-public Ticket(int id, Event event, TicketType ticketType, String studentName, boolean canceled, boolean admitted) {
-	if(id <= 0.0) {// checks id is positive
+public Ticket(int id, Event event, TicketType ticketType, String studentName) {
+	if(id <= 0) {// checks id is positive
 		throw new IllegalArgumentException("ID must be positive");
 	}
 	if(event == null) {// checks if event is null
@@ -59,7 +60,8 @@ public boolean isActive() { // only active if not canceled or admitted
 }
 
 public boolean cancel() {
-	if(isActive() == false) {// if not active cannot be cancelled
+	if(isActive() == false) { // if not active cannot be cancelled
+		System.out.println("Operation Failed");
 		return false;
 	}
 	this.canceled = true;// cancels ticket
@@ -68,6 +70,7 @@ public boolean cancel() {
 
 public boolean admit() {
 	if(isActive() == false) {// cannot admit if not active
+		System.out.println("Operation Failed");
 		return false;
 	}
 	

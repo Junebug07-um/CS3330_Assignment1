@@ -1,22 +1,23 @@
+package cs3300.assignment1;
 
 public class TicketBook {
 	private Ticket[] tickets;
-	private int count; // has ticket array and cout
+	private int count; // has ticket array and count
 	
 	public TicketBook (int capacity) {
 		if(capacity <= 0) {// capacity must be positive
 			throw new IllegalArgumentException("Capacity must be at least 1");
 		}
-		this.tickets = new Ticket[count]; // sets array of count
+		this.tickets = new Ticket[capacity]; // sets array of count
 		this.count = 0; // count is 0
 		
 	}
 	
-	public Ticket createTicket(int id, Event event, TicketType type, String studentName, boolean admitted, boolean canceled) {
+	public Ticket createTicket(int id, Event event, TicketType type, String studentName) {
         if (count >= tickets.length) {// creates ticket and checks that count of tickets is less than total capacity
             throw new IllegalStateException("TicketBook capacity reached. Cannot store more tickets.");
         }
-        Ticket ticket = new Ticket(id, event, type, studentName, admitted, canceled); // makes new ticket
+        Ticket ticket = new Ticket(id, event, type, studentName); // makes new ticket
         tickets[count] = ticket; // sets ticket at count of tickets - 1(bc smthing is stored at 0)
         count++; // adds one to count
         return ticket;
@@ -28,6 +29,7 @@ public class TicketBook {
                 return tickets[i]; // if found returns ticket
             }
         }
+        System.out.println("No ticket found\n");
         return null;// else returns null
     }
 

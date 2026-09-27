@@ -1,3 +1,4 @@
+package cs3300.assignment1;
 
 public class Event {
 	private final String name;
@@ -27,7 +28,7 @@ public class Event {
 	
 	@Override
 	public String toString() {// print name and location of event
-		return name + "@" + location;
+		return name + " @ " + location;
 	}
 	
 
